@@ -58,10 +58,6 @@ int main(int argc, char** argv) {
 
     pid_t pid = fork();
     if (pid == 0) {
-/*        long res = ptrace(PTRACE_TRACEME, 0, 0, 0);
-        if (res < 0)
-            errquit("ptrace(PTRACE_TRACEME)");*/
-
         if (execvp(argv[1], argv + 1) < 0)
             errquit("Failed to start process");
 
